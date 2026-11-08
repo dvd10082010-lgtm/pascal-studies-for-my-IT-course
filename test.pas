@@ -12,7 +12,7 @@ begin
                 writeln(' insira o nome dos cadastrados ');
                 readln(nomeTmp);
 
-                if (nomeTmp = ('Ozen'))  then
+                if (nomeTmp = ('Flávio'))  then
                     begin
                         writeln('nome não aceito ');
                     end

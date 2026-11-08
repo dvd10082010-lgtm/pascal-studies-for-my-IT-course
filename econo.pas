@@ -55,15 +55,18 @@ writeln('-> 2. Olhar Registros <-');
 writeln('-> 3. Sair <-');
 readln(options);
     case options of
-    1 : inputs_outs();
+    1: inputs_outs();
     2: registers();
     3: writeln('saindo.....');
     else
-        writeln('opção invalida....');
+        begin
+            writeln('opção invalida....');
+        end;
     end;
 until options = 3;
 menu := options;
 end;
+
 
 Begin
   inputs_outs();
