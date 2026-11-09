@@ -1,21 +1,20 @@
-Program EcoSystem ;
-{recebe as entradas e saídas de caixa, calcula o total á pagar, e armazena tudo num array}
-
 procedure inputs_outs();
   var
   inputs,outs : real;
   inadout : shortint;
   supravt, defcit : array[1..25] of real;
-  i : integer;
-  p : integer;
+  i,cont_in : integer;
+  p, cont_out : integer;
     begin
+    i := 1;
+    p := 1;
+    cont_in := 0;
+    cont_out := 0;
+    repeat
     writeln('--- cadastrar movimentações ---');
     writeln('1. entrada de capital ');
     writeln('2. saídas ');
     writeln('3.sair ');
-    i := 1;
-    p := 1;
-    repeat
         writeln('---- insira a sua escolha: ----');
         readln(inadout);
         if (inadout = 1) then
@@ -24,6 +23,7 @@ procedure inputs_outs();
             readln(inputs);
             supravt[i] := inputs;
             i := i + 1;
+            cont_in := cont_in + 1;
         end
         else if (inadout = 2) then
         begin
@@ -31,6 +31,7 @@ procedure inputs_outs();
             readln(outs);
             defcit[p] := outs; 
             p:= p + 1;
+            cont_out := cont_out + 1;
         end
         else if (inadout = 3) then
         begin
@@ -41,33 +42,21 @@ procedure inputs_outs();
             writeln('insira valores de 1 á 3');
         end;
     until inadout = 3;
-end;
-
-function menu() : shortint;
-var 
-options : shortint;
-begin
-repeat
-writeln('--- opções ---');
-writeln;
-writeln('-> 1. registar dados <-');
-writeln('-> 2. Olhar Registros <-');
-writeln('-> 3. Sair <-');
-readln(options);
-    case options of
-    1: inputs_outs();
-    2: registers();
-    3: writeln('saindo.....');
-    else
-        begin
-            writeln('opção invalida....');
-        end;
+    
+    writeln('==== valores registrados: ====');
+    writeln;
+    writeln('----- entradas: -----');
+    for i := 1 to cont_in  do
+    begin
+        writeln(i ,' - valor : R$', supravt[i]:5:2);
     end;
-until options = 3;
-menu := options;
+    writeln('----- saídas -----');
+    for p := 1 to cont_out do
+    begin
+        writeln(p ,' - valor : R$ ', defcit[p]:5:2);
+    end;
 end;
 
-
-Begin
-  inputs_outs();
+Begin 
+inputs_outs()
 end.

@@ -1,13 +1,9 @@
 [
 
-{"tipo da movimentação" : 1, "valor da movimentação " : 10.00}
+{"tipo da movimentação" : 1, "valor da movimentação " : 1000.00}
 ,
-{"tipo da movimentação" : 2, "valor da movimentação " : 20.00}
+{"tipo da movimentação" : 2, "valor da movimentação " : 1300.00}
 ,
-{"tipo da movimentação" : 3, "valor da movimentação " : 20.00}
-,
-{"tipo da movimentação" : 40, "valor da movimentação " : 4000.00}
-,
-{"tipo da movimentação" : -55, "valor da movimentação " : 20320.00}
+{"tipo da movimentação" : 3, "valor da movimentação " : 12800.00}
 
 ]
