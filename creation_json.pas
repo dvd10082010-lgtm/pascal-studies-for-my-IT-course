@@ -1,4 +1,4 @@
-program RecordSystem;
+program creation_json;
 
 {$mode objfpc}
 
@@ -8,7 +8,7 @@ program RecordSystem;
             value : real;
             ad_gov : boolean;
         end;
-procedure recording();
+procedure save_json();
     var
         regis : Text ;
         mov : Tmovimentation;
@@ -20,9 +20,9 @@ procedure recording();
         writeln(regis,'[');
         while true do 
         begin
-            writeln('--- digite o tipo de movimentação desejada (ou 0, para sair) ---');
+            writeln('--- digite o tipo de movimentação desejada (ou 3, para sair) ---');
             readln(mov.type_mov);
-            if (mov.type_mov = 0) then
+            if (mov.type_mov = 3) then
             begin
                 writeln('saindo.....');
                 break;
@@ -37,13 +37,13 @@ procedure recording();
             begin
                 write(regis,',');
             end;
-            writeln(regis , #13#10 + '{"tipo da movimentação" : ' ,mov.type_mov,', "valor da movimentação " : R$ ',mov.value:5:2,'}');
+            writeln(regis , #13#10 + '{"tipo da movimentação" : ' ,mov.type_mov,', "valor da movimentação " : ',mov.value:5:2,'}');
         end;
         write(regis, #13#10 + ']');
         close(regis);
         writeln('json, salvo com sucesso!');
     end;
 Begin
-recording(); 
+save_json(); 
 readln;
 end.

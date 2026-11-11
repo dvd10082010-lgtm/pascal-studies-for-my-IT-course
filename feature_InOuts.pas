@@ -1,3 +1,5 @@
+program feature_InOuts;
+{$objfpc}{$H+}
 procedure inputs_outs();
   var
   inputs,outs : real;

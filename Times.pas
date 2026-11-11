@@ -1,4 +1,4 @@
-program variousTimes;
+program Times;
 
 var
 camp : string;
